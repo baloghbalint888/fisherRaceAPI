@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fishers</title>
+    <style>
+            th, td{
+                border: 1px solid black;
+                margin: 0px;
+            }
+            tr{
+                background-color: rgba(20, 20, 20, 0.2);
+            }
+            tr:hover{
+                background-color: rgba(20, 20, 20, 0.1);
+            }
+            caption{
+                background-color: rgba(20, 20, 20, 0.2);
+                padding: 10px;
+                margin: 5px 0 10px 0;
+                font-weight: bold;
+            }
+            .back-auth{
+                background-color: rgba(240, 0, 0, 0.2);
+            }
+            .back-auth:hover{
+                background-color: rgba(240, 0, 0, 0.1);
+            }
+            a{
+                color: navy;
+            }
+            a:hover{
+                color: black;
+            }
+        </style>
+</head>
+<body>
+<table cellpadding="10">
+    <caption>Fishers REST API</caption>
+    <tr>
+        <th>Request method</th>
+        <th>url path</th>
+        <th>web service</th>
+        <th>authorization</th>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/fishers">fishers</a></td>
+        <td>A versenyen induló horgászok abc sorrendben</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/fishers/12">fishers/{id}</a></td>
+        <td>Egy kiválasztott horgász adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/comp">comp</a></td>
+        <td>A horgászok összes fogása súly szerint sorbarendezve.</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/catchlist/12">catchlist/{id}</a></td>
+        <td>A kiválasztott horgász által kifogott halak fajtája és összsúlya</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>fishers</td>
+        <td>Új horgász felvitele</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>fishers/{id}</td>
+        <td>Horgász országának módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>fishers/{id}</td>
+        <td>Kiválasztott horgász törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/fishes">fishes</a></td>
+        <td>A tóban lévő halak a kifogott súly szerint sorbarendezve</td>
+        <td>engedélyezett</td>
+    </tr>
+</table>
+</body>
+</html>
